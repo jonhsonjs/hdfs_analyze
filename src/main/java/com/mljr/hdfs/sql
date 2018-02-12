@@ -1,0 +1,45 @@
+
+#1、统计一级目录大小
+select joinedpath, sumsize
+from
+(
+select joinedpath,round(sum(filesize)/1024/1024/1024,2) as sumsize
+from
+(select concat('/',split(path,'\/')[1]) as joinedpath,acctime,filesize,owner
+from default.hdfs_info
+)t
+where joinedpath != 'null'
+group by joinedpath
+)h
+
+#2、统计二级目录大小
+select joinedpath, sumsize
+from
+(
+select joinedpath,round(sum(filesize)/1024/1024/1024,2) as sumsize
+from
+(select concat('/',split(path,'\/')[1],'/',split(path,'\/')[2]) as joinedpath,acctime,filesize,owner
+from default.hdfs_info
+)t
+where joinedpath != 'null'
+group by joinedpath
+)h
+order by sumsize desc
+
+#3、筛选出所有文件中小于1K的文件的个数，按照用户分组
+SELECT owner, count(1) as small_file_num
+  FROM (SELECT (case filesize < 1024 WHEN true THEN 'small' ELSE 'large' end)
+  AS
+  relative_size, modificatetime, owner
+  FROM
+  hdfs_info WHERE is_dir="0") tmp
+  WHERE relative_size='small' GROUP BY owner;
+
+
+#4、筛选出每个用户所拥有的文件数量以及文件大小，按照用户分组
+select owner, count(1) num_of_files,round(sum(filesize)/1024/1024/1024,2) Total_Size_GB
+ from
+ hdfs_info
+ where
+ is_dir="1" and acctime < modificatetime
+ group by owner order by Total_Size_GB;
