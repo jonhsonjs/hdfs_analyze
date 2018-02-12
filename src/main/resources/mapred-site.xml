@@ -80,19 +80,19 @@
   </property>
   <property>
     <name>mapreduce.jobhistory.address</name>
-    <value>hlt-data-171.mljr.com:10020</value>
+    <value>***.***.***:10020</value>
   </property>
   <property>
     <name>mapreduce.jobhistory.webapp.address</name>
-    <value>hlt-data-171.mljr.com:19888</value>
+    <value>***.***.***:19888</value>
   </property>
   <property>
     <name>mapreduce.jobhistory.webapp.https.address</name>
-    <value>hlt-data-171.mljr.com:19890</value>
+    <value>***.***.***:19890</value>
   </property>
   <property>
     <name>mapreduce.jobhistory.admin.address</name>
-    <value>hlt-data-171.mljr.com:10033</value>
+    <value>***.***.***:10033</value>
   </property>
   <property>
     <name>mapreduce.framework.name</name>

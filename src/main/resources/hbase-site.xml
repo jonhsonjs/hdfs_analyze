@@ -96,7 +96,7 @@
   </property>
   <property>
     <name>hbase.zookeeper.quorum</name>
-    <value>hlt-data-173.mljr.com,hlt-data-174.mljr.com,hlt-data-172.mljr.com,hlt-data-175.mljr.com,hlt-data-176.mljr.com</value>
+    <value>***.***.***,***.***.***,***.***.***,***.***.***,***.***.***</value>#此处为ip配置或者hosts
   </property>
   <property>
     <name>hbase.zookeeper.property.clientPort</name>

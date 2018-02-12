@@ -109,7 +109,7 @@
 
     <name>hive.zookeeper.quorum</name>
 
-  <value>hlt-data-172.mljr.com:2181,hlt-data-173.mljr.com:2181,hlt-data-174.mljr.com:2181</value>
+  <value>***.***.***:2181,***.***.***:2181,***.***.***:2181</value>
 
   </property>
 
