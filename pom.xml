@@ -22,11 +22,6 @@
             <version>${spark.version}</version>
         </dependency>
 
-
-        <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-hive_2.10 -->
-        <!-- https://mvnrepository.com/artifact/org.apache.avro/avro-tools -->
-        <!-- https://mvnrepository.com/artifact/javax.mail/mail -->
-
     </dependencies>
     <build>
         <plugins>

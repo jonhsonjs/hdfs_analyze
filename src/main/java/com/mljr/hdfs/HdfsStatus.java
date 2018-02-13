@@ -14,7 +14,7 @@ public class HdfsStatus {
         try{
             Configuration config = new Configuration();
 
-            hdfs = FileSystem.get(new URI("*.*.*.*"),//主节点ip或者hosts
+            hdfs = FileSystem.get(new URI("***"),//主节点ip或者hosts
                     config, "hdfs");
             Path path = new Path("/");
             String content_csv = "/home/dmp/jiansong.peng/content.csv";
